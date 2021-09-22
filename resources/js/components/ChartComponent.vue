@@ -1,0 +1,77 @@
+<template>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">                    
+                    <highcharts class="hc" :options="chartOptions" ref="chart"></highcharts>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import onboarding from './../onboarding';
+import {Chart} from 'highcharts-vue';
+import Highcharts from 'highcharts'
+
+    export default {
+
+        components: {
+            Highcharts,
+            highcharts:Chart 
+        },
+
+        data() {
+            return {
+                chartdata:{},                
+            }
+        },
+
+        computed : {
+            chartOptions() {
+                return {
+                    series :this.chartdata,
+                    chart: {
+                        type: 'areaspline'
+                    },
+                    title: {
+                        text: 'Onboarding Retention'
+                    },
+                    xAxis: {
+                        categories: [
+                            '0',
+                            '20',
+                            '40',
+                            '50',
+                            '70',
+                            '90',
+                            '99',
+                            '100'
+                        ], 
+                        title: {
+                            text: 'Onboarding Precentage'
+                        },       
+                    },
+                }
+                
+                }
+        },
+        created(){
+            this.init();
+        },
+        methods : {
+            async init() {
+               await this.getOnboardingDetails();
+            },
+
+            getOnboardingDetails() {
+                 return onboarding.getAll().then(res =>{
+                    const { status, message, data } = res;
+                    this.chartdata = data;
+                });
+            }
+            
+        }
+    }
+</script>
