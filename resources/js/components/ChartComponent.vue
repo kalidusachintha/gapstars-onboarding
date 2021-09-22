@@ -33,7 +33,7 @@ import Highcharts from 'highcharts'
                 return {
                     series :this.chartdata,
                     chart: {
-                        type: 'areaspline'
+                        type: 'line'
                     },
                     title: {
                         text: 'Onboarding Retention'
@@ -52,6 +52,15 @@ import Highcharts from 'highcharts'
                         title: {
                             text: 'Onboarding Precentage'
                         },       
+                    },
+                    yAxis:{
+                        labels :{
+                            format: '{value}%'
+                        }
+                    },
+                    tooltip: {
+                        shared: true,
+                        valueSuffix: ' %'
                     },
                 }
                 

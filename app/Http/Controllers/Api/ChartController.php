@@ -14,6 +14,6 @@ class ChartController extends Controller
      */
     public function getChartData(Onboarding $onboarding)
     {
-        return $onboarding->getOnboardPrecentage();
-    }    
+        return $onboarding->getOnboardStepsPrecentage();
+    }
 }

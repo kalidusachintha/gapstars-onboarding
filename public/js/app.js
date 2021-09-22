@@ -2119,7 +2119,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return {
         series: this.chartdata,
         chart: {
-          type: 'areaspline'
+          type: 'line'
         },
         title: {
           text: 'Onboarding Retention'
@@ -2129,6 +2129,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           title: {
             text: 'Onboarding Precentage'
           }
+        },
+        yAxis: {
+          labels: {
+            format: '{value}%'
+          }
+        },
+        tooltip: {
+          shared: true,
+          valueSuffix: ' %'
         }
       };
     }
@@ -2162,8 +2171,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return _onboarding__WEBPACK_IMPORTED_MODULE_1__["default"].getAll().then(function (res) {
         var status = res.status,
             message = res.message,
-            data = res.data; //console.log(res);
-
+            data = res.data;
         _this2.chartdata = data;
       });
     }

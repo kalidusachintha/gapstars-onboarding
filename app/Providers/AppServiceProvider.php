@@ -17,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Onboarding::class, function ($app) {
             switch ($app->make('config')->get('chart_source.name')) {
-                case 'csv' :
+                case 'csv':
                     return new CsvSourceService;
                 default:
                     throw new \RuntimeException('unknown chart source');
