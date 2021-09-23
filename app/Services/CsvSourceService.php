@@ -65,7 +65,7 @@ class CsvSourceService implements Onboarding
      *
      * @return array
      */
-    private function getDataFromSource()
+    private function getDataFromSource() : array
     {
         if (!File::exists(storage_path($this->file_name))) {
             return false;
@@ -97,7 +97,7 @@ class CsvSourceService implements Onboarding
      * @param array $source_data
      * @return array
      */
-    private function getWeeklyOnboardData(array $source_data)
+    private function getWeeklyOnboardData(array $source_data) : array
     {
         $result = [];
         
