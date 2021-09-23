@@ -2146,6 +2146,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     this.init();
   },
   methods: {
+    /**
+     * setup
+     */
     init: function init() {
       var _this = this;
 
@@ -2165,6 +2168,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
+
+    /**
+     * get onboarding steps precentage details
+     * @returns {unresolved}
+     */
     getOnboardingDetails: function getOnboardingDetails() {
       var _this2 = this;
 

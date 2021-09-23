@@ -62,25 +62,29 @@ import Highcharts from 'highcharts'
                         shared: true,
                         valueSuffix: ' %'
                     },
-                }
-                
-                }
+                }                
+            }
         },
         created(){
             this.init();
         },
         methods : {
+            /**
+             * setup
+             */
             async init() {
                await this.getOnboardingDetails();
             },
-
+            /**
+             * get onboarding steps precentage details
+             * @returns {unresolved}
+             */
             getOnboardingDetails() {
                  return onboarding.getAll().then(res =>{
                     const { status, message, data } = res;
                     this.chartdata = data;
                 });
-            }
-            
+            }            
         }
     }
 </script>
