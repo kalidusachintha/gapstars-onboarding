@@ -11,5 +11,5 @@
 - **Run php artisan key:generate**
 - **Run npm install**
 - **Run npm run dev**
-- **Launch the app in http://127.0.0.1:8000**
+- **Launch the app in php artisan serve (http://127.0.0.1:8000)**
 
