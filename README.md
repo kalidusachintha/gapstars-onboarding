@@ -3,7 +3,7 @@
 ![Laravel](https://user-images.githubusercontent.com/66696942/134375209-49b91a25-b4f1-405f-bb52-d13becaa8dfa.png)
 
 
-## Install
+## Setup Instructions
 
 - **Clone the repository with git clone**
 - **Copy .env.example file to .env**
